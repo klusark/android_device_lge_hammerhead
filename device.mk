@@ -20,6 +20,7 @@
 # Everything in this directory will become public
 
 
+ifeq ($(CM_BUILD),)
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/lge/hammerhead-kernel/zImage-dtb
 else
@@ -29,6 +30,7 @@ endif
 
 PRODUCT_COPY_FILES := \
     $(LOCAL_KERNEL):kernel
+endif
 
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.rc:root/init.hammerhead.rc \
