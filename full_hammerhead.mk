@@ -17,6 +17,12 @@
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
+# Live Wallpapers
+PRODUCT_PACKAGES += \
+        LiveWallpapers \
+        LiveWallpapersPicker \
+        VisualizationWallpapers
+
 # Get the long list of APNs
 PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 
@@ -31,5 +37,4 @@ PRODUCT_MANUFACTURER := LGE
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 $(call inherit-product, device/lge/hammerhead/device.mk)
-$(call inherit-product-if-exists, vendor/lge/hammerhead/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/lge/hammerhead/hammerhead-vendor.mk)
